@@ -1,0 +1,15 @@
+target/
+node_modules/
+.idea/
+*.iml
+.vscode/
+.env
+application-local.properties
+
+# Environment files
+.env.*
+!.env.example
+
+# Backend environment files
+backend/.env
+backend/.env.*
