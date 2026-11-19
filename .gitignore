@@ -5,3 +5,11 @@ node_modules/
 .vscode/
 .env
 application-local.properties
+
+# Environment files
+.env.*
+!.env.example
+
+# Backend environment files
+backend/.env
+backend/.env.*
