@@ -85,7 +85,12 @@ public class Contact {
     }
 
     public void setEmails(List<ContactEmail> emails) {
-        this.emails = emails;
+        List<ContactEmail> newEmails = new ArrayList<>(emails);
+
+        this.emails.forEach(email -> email.setContact(null));
+        this.emails.clear();
+
+        newEmails.forEach(this::addEmail);
     }
 
     public List<ContactPhone> getPhones() {
@@ -93,9 +98,11 @@ public class Contact {
     }
 
     public void setPhones(List<ContactPhone> phones) {
-        this.phones = phones;
+        List<ContactPhone> newPhones = new ArrayList<>(phones);
+
+        this.phones.forEach(phone -> phone.setContact(null));
+        this.phones.clear();
+
+        newPhones.forEach(this::addPhone);
     }
-
-    
-
 }
