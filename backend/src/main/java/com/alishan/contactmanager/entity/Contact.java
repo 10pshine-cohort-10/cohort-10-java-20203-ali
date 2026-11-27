@@ -85,7 +85,7 @@ public class Contact {
     }
 
     public void setEmails(List<ContactEmail> emails) {
-        List<ContactEmail> newEmails = new ArrayList<>(emails);
+        List<ContactEmail> newEmails = List.copyOf(emails);
 
         this.emails.forEach(email -> email.setContact(null));
         this.emails.clear();
@@ -98,7 +98,7 @@ public class Contact {
     }
 
     public void setPhones(List<ContactPhone> phones) {
-        List<ContactPhone> newPhones = new ArrayList<>(phones);
+        List<ContactPhone> newPhones = List.copyOf(phones);
 
         this.phones.forEach(phone -> phone.setContact(null));
         this.phones.clear();
